@@ -1117,7 +1117,11 @@ function get_country_option_icon(countryCode, { flags, flagsPath, flagComponent 
 		return flags[countryCode]
 	}
 
-	return React.createElement(flagComponent, { countryCode, flagsPath })
+	return React.createElement(flagComponent, {
+		countryCode,
+		flagsPath,
+		dialCode: getPhoneCode(countryCode),
+	})
 }
 
 // Whether to add the "International" option to the list of countries
